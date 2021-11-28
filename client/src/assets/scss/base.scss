@@ -1,0 +1,55 @@
+
+@import"variable";
+@import"home";
+@import"nav";
+@import"search";
+@import"footer";
+@import"login"; 
+@import"service_page_nav"; 
+@import"properties"; 
+@import"contact"; 
+@import"contact_form"; 
+@import"mobile_menu"; 
+@import"dashboard"; 
+@import"btntop"; 
+@import"projectList"; 
+@import"project_create"; 
+@import"modal"; 
+@import"loading"; 
+@import"property_details"; 
+
+
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   font-family: fa5-proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-seri;
+  overflow-x: hidden;
+
+   img{
+     object-fit: contain;
+     width: 100%;
+   }
+
+   button{
+       padding: .5rem 1.5rem;
+       background-color: $main_deep_blue;
+       color: white;
+       font-size: 1.5rem;
+       border-radius: 0.5em;
+       transition: all .5s linear;
+       border: none;
+
+       span {
+        margin: 4em 0 0 1em;
+        font-size: 1.2em;
+      }
+
+      &:hover{
+        background-color: #0287ca;
+      }
+   }
+}

@@ -1,0 +1,114 @@
+.service_content{
+    margin: 2em;
+}
+
+.service_filter{
+    display: flex;
+    justify-content: space-between;
+    
+    ul{
+        list-style: none;
+
+        li{
+            border: .1em solid rgb(228, 228, 228);
+            padding: .5em;
+            border-radius: .3em;
+        }
+    }
+}
+.service_item{
+    margin-top: 2em;
+    border-bottom:  .1em solid rgb(228, 228, 228);
+}
+
+.service_item_inner{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 2em;
+   
+   
+
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    
+}
+
+.service_card{
+    border: .1em solid rgb(228, 228, 228);
+
+    .service_card_info{
+        padding: 1em .8em;
+        .servicer_info{
+            display: flex;
+            align-items: center;
+            margin-bottom: 1em;
+            p{
+                margin-left: .5em;
+                font-size: .8em;
+            }
+            img{
+                width: 2em;
+                height: 2em;
+                object-fit: cover;
+                border-radius: 100%;
+            }
+        }
+
+        
+    }
+
+    .service_card_footer{
+        display: flex;
+        border-top: .1em solid rgb(228, 228, 228);
+        padding: 1em;
+        justify-content: space-between;
+        align-items: center;
+
+        .pricing{
+            p{
+                font-size: .7em;
+                color: grey;
+
+                span{
+                    color: rgb(7, 7, 7) !important; 
+                    font-size: 1.5em !important;
+                }
+            }
+        }
+    }
+}
+
+.faq{
+    margin-top: 3em;
+
+    h1{
+        text-align: center;
+        font-size: 2em;
+        color: grey;
+    }
+
+    .faq_inner{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 2em;
+        margin: 2em 0;
+
+        .faq_question{
+            margin-bottom: 2em;
+
+            h5{
+                font-size: 1em;
+                margin-bottom: .5em;
+            }
+            p{
+                color: grey;
+                line-height: 1.5em;
+                font-size: .8em;
+            }
+        }
+    }
+}
+

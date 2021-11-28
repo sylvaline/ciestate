@@ -1,0 +1,30 @@
+.btn_to_top{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: coral;
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .arrow_up{
+      animation: move_up 0.5s alternate ease infinite;
+      i{
+        font-size: 2em;
+        color: white;
+      }
+    }
+
+  }
+
+  @keyframes move_up {
+    from{
+      transform: translateY(2px);
+    } to{
+      transform: translateY(-1px);
+    }
+  }

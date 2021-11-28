@@ -1,0 +1,36 @@
+.search_style{
+   padding: 1.2em 1em;
+   background-color: white;
+   border-radius: 1em;
+   box-shadow: .1em .1em .5em rgb(187, 187, 187);
+   width: 60%;
+   margin: -2em auto 2em;
+   color: rgb(223, 223, 223);
+    font-size: 1em;
+
+   input{
+       background-color: transparent;
+       border: none;
+       margin-left: 1em;
+       font-size: 1em;
+       outline: none;
+       width: 90%;
+       
+       &::placeholder{
+        color: rgb(223, 223, 223);
+       }
+   }
+
+   @media screen and (max-width:50rem) {
+    width: 90%;
+    margin: auto;
+    
+   }
+
+   input{
+     width: 80%;
+   }
+}
+
+
+

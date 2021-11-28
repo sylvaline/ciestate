@@ -1,0 +1,379 @@
+.home {
+  width: 100%;
+}
+
+.home_landing {
+  background-color: $main_deep_blue;
+  // min-height: 75vh;
+  display: none;
+
+  @media screen and (max-width:50rem){
+    // min-height: 100vh !important;
+  }
+}
+
+.top_properties,
+.our_services,
+.our_procces,
+.about_us_home, .why_choose_us{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+   
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 4rem;
+    font-weight: bolder;
+  }
+
+  
+}
+
+
+.cta_contact{
+  background-color: rgb(246, 112, 63);
+  padding: 2rem;
+
+  h2{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+
+    a{
+      color: white;
+      
+    }
+  }
+}
+
+@media screen and (max-width:50rem) {
+  .first{
+    // margin-top: 1rem;
+    padding-top: 6rem;
+  }
+}
+
+.why_choose_us{
+  background-color: $main_deep_blue;
+  display: flex;
+
+  .title{
+    color: white;
+  }
+}
+
+.choose_card{
+  border: 0.1rem solid gainsboro;
+  padding: 2rem;
+
+  .choose_centre{
+    display: flex;
+    font-size: 2rem;
+    color: white;
+
+    i{
+      margin-right: 1rem;
+      font-size: 3rem;
+    }
+
+  }
+
+  p{
+    font-size: 1.1rem;
+    color: white;
+  }
+}
+
+.our_procces{
+    background-color: $main_gray_bg;
+}
+
+.why_choose_us_inner{
+  width: 90%;
+  margin: 4em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2em;
+}
+
+.our_process_inner {
+  width: 90%;
+  margin: 4em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))!important; 
+  grid-gap: 2em;
+
+  @media screen and (max-width:40rem) {
+    display: block;
+   
+  }
+
+  .process_card{
+      display: flex;
+      background-color: white;
+      border: 0.1rem solid gainsboro;
+      border-bottom: 0.1rem solid $main_deep_blue;
+      padding: 1rem 1rem;
+      min-height: 30vh;
+      justify-content: center;
+
+      
+      
+      @media screen and (max-width:50rem) {
+        margin-bottom: 1rem;
+      }
+     
+
+    .process_card_icon{
+        font-size: 2rem;
+        color: $main_deep_blue;
+        i{
+            margin: 1rem 0 0 0;
+        }
+        @media screen and (max-width:50rem) {
+          margin-right: 1rem;
+        }
+        
+    }
+      .process_card_content{
+        margin-left: 3rem;
+
+         h4{
+             margin: 1rem 0;
+         }
+
+         @media screen and (max-width:50rem) {
+          margin-left: 0;
+        }
+        
+      }
+  }
+}
+
+.top_properties_inner,
+.our_services_inner {
+  width: 90%;
+  margin: 4em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1em;
+}
+
+.top_properties{
+  background-color: $main_gray_bg;
+}
+
+.our_services {
+  width: 100%;
+
+  .service_card{
+    border: 0.1rem solid gainsboro;
+  border-bottom: 0.1rem solid $main_deep_blue;
+  text-align: center;
+  padding-top: 2rem;
+ 
+  i{
+    background-color: $main_deep_blue !important;
+    padding: 1rem;
+    color: white !important;
+    border-radius: 50%;
+    font-size: 3rem !important;
+  }
+
+  .card_content{
+    h4{
+      font-size: 1rem;
+    
+    }
+    p{
+      font-size: .9rem;
+    }
+  }
+
+  @media screen and (max-width:50rem) {
+    i{
+      font-size: 4rem;
+      
+    }
+
+    .card_content{
+      h4{
+        font-size: 1.5rem;
+        margin-top: 0 !important;
+      }
+      p{
+        font-size: 1.2rem;
+      }
+    }
+}
+  }
+
+  .intro_section{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-top: 6rem;
+
+    h3{
+      line-height: 2rem;
+    }
+
+    .service_title{
+      font-size: 1.5rem;
+      color: coral;
+      margin-bottom: 1rem;
+    }
+
+    h2{
+      margin-bottom: 1rem;
+      font-size: 2rem;
+
+      span{
+      
+        display: block;
+        color: $main_deep_blue;
+        font-size: 4rem;
+      }
+    }
+
+    @media screen and (max-width:50rem) {
+      width: 100% !important;
+      h2{
+        span{
+          margin-top: 1rem;
+          font-size: 2.5rem !important;
+        }
+      }
+    }
+  }
+
+  img{
+    width: 100%;
+    
+    object-fit: contain;
+  }
+}
+
+.about_us_home{
+  .rest_about{
+    width: 90%;
+    margin: -3rem auto 2rem;
+    p{
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width:50rem){
+    .title{
+      margin-top: 8rem !important;
+    }
+  }
+}
+
+.about_us_home_inner{
+  width: 90%;
+  margin: 4em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 1em;
+
+  .about_img{
+    img{
+      width: 100%;
+      height: 400px;
+      // object-fit: contain;
+    }
+  }
+
+  .about_content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: -2rem;
+
+      h4{
+          font-size: 2rem !important;
+      }
+
+      h6{
+        color: $main_deep_blue;
+        font-size: 1.5rem;
+      }
+
+      p{
+        font-size: 1.2rem;
+      }
+
+      @media screen and (max-width:50rem) {
+        margin-left: 0 !important;
+      }
+
+      h4{
+         
+          font-size: 2rem;
+      }
+      h6{
+        color: $main_deep_blue;
+      }
+       p{
+        margin: 1rem 0;
+      }
+  }
+}
+.property_card {
+  border: 0.1rem solid gainsboro;
+  border-bottom: 0.1rem solid $main_deep_blue;
+  // max-height: 20% !important;
+  text-align: center;
+ 
+  img{
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+  }
+
+  .category{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+    
+    span{
+      color: $main_deep_blue;
+      padding: 1rem;
+    }
+  }
+ 
+
+  a{
+    img {
+      width: 100%;
+      
+    }
+  }
+}
+
+.card_content {
+  margin-top: 1rem;
+  padding: 1rem;
+
+  h4 {
+    margin: 1rem 0;
+  }
+  p {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.load_more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 4rem 0;
+
+  
+}

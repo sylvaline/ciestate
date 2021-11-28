@@ -1,0 +1,50 @@
+.dashboard{
+    width: 100%;
+ 
+    background-color: rgba(128, 128, 128, 0.459);
+    display: flex;
+
+    .sidebar{
+        width: 10%;
+        height: 130vh;
+        background-color: $main_nav_bg;
+        text-align: center;
+    .intro{
+        margin-top: 3rem;
+    }
+
+        h3{
+            margin-bottom: 1rem;
+        }
+    }
+
+    .content{
+        width: 90%;
+        height: 100%;
+        margin: 5rem auto ;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        h2{
+            font-size: 2rem;
+            color: $main_deep_blue;
+        }
+
+        h4{
+            margin: 1rem 0;
+            
+        }
+
+        p{
+            margin-bottom: .5rem;
+
+            
+        }
+        
+        
+    }
+
+    
+}

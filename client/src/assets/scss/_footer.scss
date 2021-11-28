@@ -1,0 +1,113 @@
+.footer {
+  background-color: #495057;
+  min-height: 55vh;
+  padding-top: 2em;
+  color: white;
+}
+.footer_intro {
+ 
+  text-align: start;
+  width: 90%;
+  font-size: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2em;
+  margin: 1.5rem auto;
+
+  h4{
+      margin-bottom: 1rem;
+  }
+
+  .news_letter{
+    margin-left: -8rem;
+
+    @media screen and (max-width:50rem) {
+     margin-left: 0;
+  }
+  }
+
+  .company {
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+    }
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+    a {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    margin-bottom: 2rem;
+    i {
+      color: coral;
+      margin-right: 1rem;
+    }
+    font-size: 1rem;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    i {
+      color: coral;
+      margin-right: 1rem;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0.5em;
+  }
+}
+.footer_icon {
+  margin: 0 1em 3em;
+  text-align: start;
+  width: 30%;
+
+  ul {
+    list-style: none;
+    font-size: 1.5em;
+  }
+}
+
+.footer_menu {
+  width: 100%;
+  margin: 1em 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.buttom_footer {
+  background-color: rgb(27, 27, 27);
+  height: 15vh;
+  display: flex;
+  align-items: center;
+
+  .buttom_footer_inner {
+    color: rgb(161, 161, 161) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+
+    @media screen and (max-width:50rem) {
+        display: block;
+        margin: auto !important;
+    }
+  }
+}

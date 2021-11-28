@@ -1,0 +1,37 @@
+.projectList {
+    .fetch_btn {
+      margin-top: 2em;
+    }
+
+    table {
+      display: flex;
+
+      th {
+        width: 6em;
+        background-color: gray;
+        padding: 0.5em;
+      }
+
+      td {
+        width: 6em;
+        border: 0.1em solid gray;
+        padding: 0.5em;
+        max-height: 3em;
+        cursor: pointer;
+      }
+
+      .th_large {
+        width: 14em;
+      }
+    }
+
+    .projectList_grid {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        width: 4em;
+        height: 4em;
+      }
+    }
+  }
