@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { delete_project, get_projects } from "../../store/actions/projectActions";
 import parser from "html-react-parser";
 import { Link } from "react-router-dom";
-import Modal from "./Modal";
+import ModalCancel from "./ModalCancel";
 
 
 const ProjectList = (props)=> {
@@ -28,7 +28,7 @@ const ProjectList = (props)=> {
 
 
   const handleCancel = () => {
-    props.history.push("/project-list");
+    // props.history.push("/project-list");
     setModulOpen(false);
   };
 
@@ -65,7 +65,7 @@ const ProjectList = (props)=> {
                         <td className="th_large">
                           <Link
                             to={{
-                              pathname: `admin-project-details/${project.category && project.category.name}/${project.slug}`,
+                              pathname: `admin-project-details/${project?.category && project?.category?.name}/${project.slug}`,
                               state: { project: project },
                             }}
                           >
@@ -112,7 +112,7 @@ const ProjectList = (props)=> {
               </table>
             </div>
             {modulOpen && (
-              <Modal
+              <ModalCancel
                 title="You want to delete a project?"
                 handleCancel={handleCancel}
                 id={GettingId}

@@ -1,15 +1,21 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import {get_categories, create_project} from '../../store/actions/projectActions'
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 function ProjectCreate() {
+
+  useEffect(()=>{
+    dispatch(get_categories())
+  },[])
   const project = useSelector((state) => state.project);
   const { project_msg, categories } = project;
+
+  const dispatch = useDispatch()
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -45,7 +51,7 @@ function ProjectCreate() {
   };
 
   const categoryItem = categoryOption(categories);
-
+  console.log({"catego":categoryItem})
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -60,21 +66,23 @@ function ProjectCreate() {
     }
 
     
-
+    dispatch(create_project(form))
+    setMsg(project_msg.msg);
     resetFileInput();
     setTitle("");
     setContent("");
     setCategory("");
-    setMsg(project_msg.msg);
+    
   };
 
-  
+  console.log(msg)
 
   return (
    
       <div className="form_container">
         <div className="form_title">
           <h2>Add Project</h2>
+          <p></p>
         </div>
 
         {msg ? (
@@ -96,7 +104,7 @@ function ProjectCreate() {
           <CKEditor
             editor={ClassicEditor}
             data={content}
-            onChange={( editor) => {
+            onChange={(_, editor) => {
               const data = editor.getData();
               setContent(data);
             }}

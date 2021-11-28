@@ -29,13 +29,14 @@ const get_projects = () => (dispatch, getState) => {
     .catch((err) => dispatch({ type: PROJECT_ERROR }));
 };
 
-export const create_PROJECT = (projects) => (dispatch, getState) => {
+export const create_project = (projects) => (dispatch, getState) => {
   dispatch({ type: PROJECT_LOADING });
 
   const config = configs(getState, "POST", "/project/create", projects);
 
   axios(config)
     .then((res) => {
+      console.log(res.data)
       dispatch({
         type: CREATE_PROJECT,
         payload: res.data.data,
@@ -44,7 +45,8 @@ export const create_PROJECT = (projects) => (dispatch, getState) => {
       dispatch(get_projects());
     })
     .catch((err) => {
-      dispatch(project_msg(err.response.data, err.response.status));
+      console.log(err)
+      // dispatch(project_msg(err.response.data, err.response.status));
       dispatch({ type: PROJECT_ERROR });
     });
 };
@@ -78,7 +80,7 @@ export const delete_project = (id) => (dispatch, getState) => {
 // Get all PROJECT categories
 export const get_categories = () => (dispatch) => {
   dispatch({ type: PROJECT_LOADING });
-  axios.get("/category/get-categories").then((res) =>
+  axios.get("/category/all").then((res) =>
     dispatch({
       type: GET_ALL_PROJECT_CATEGORIES,
       payload: res.data,
