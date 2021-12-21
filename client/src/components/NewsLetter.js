@@ -6,11 +6,9 @@ function NewsLetter() {
 
     const [contact_sent, setContact_sent] = useState(false)
     const auth = useSelector((state)=>state.auth)
-
+    const [errMsg, setErrMsg] = useState('')
     const [email, setEmail] = useState(auth?.user?.email||"")
     
-
-    const [setErrMsg] = useState('')
 
     const fix = ()=>{
         setContact_sent(true)
@@ -45,7 +43,7 @@ function NewsLetter() {
             <div className="form_div">
             <div className="sent_message">
           
-            <p>Thanks for Subscribing to our NewsLetter</p>
+            <p>Thanks for Subscribing to our News Letter</p>
             </div>
         </div>
         )

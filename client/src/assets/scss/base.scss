@@ -2,6 +2,7 @@
 @import"variable";
 @import"home";
 @import"nav";
+@import"about";
 @import"search";
 @import"footer";
 @import"login"; 
@@ -27,7 +28,7 @@
 
 body{
    font-family: fa5-proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-seri;
-  overflow-x: hidden;
+    color: rgba(0, 0, 0, 0.726);
 
    img{
      object-fit: contain;
@@ -52,4 +53,8 @@ body{
         background-color: #0287ca;
       }
    }
+}
+
+.our_services_container{
+  margin-top: 2rem;
 }

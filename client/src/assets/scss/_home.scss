@@ -1,5 +1,6 @@
 .home {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .home_landing {
@@ -175,6 +176,7 @@
   border-bottom: 0.1rem solid $main_deep_blue;
   text-align: center;
   padding-top: 2rem;
+  
  
   i{
     background-color: $main_deep_blue !important;
@@ -186,11 +188,11 @@
 
   .card_content{
     h4{
-      font-size: 1rem;
+      font-size: 1.3rem;
     
     }
     p{
-      font-size: .9rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -260,13 +262,22 @@
 
 .about_us_home{
   .rest_about{
-    width: 90%;
-    margin: -3rem auto 2rem;
+    width: 100%;
+
     p{
       font-size: 1.2rem;
     }
   }
   @media screen and (max-width:50rem){
+    // .rest_about{
+    //   margin: auto;
+      
+    // }
+
+    .about_content{
+      width: 95%;
+      margin:  auto;
+    }
     .title{
       margin-top: 8rem !important;
     }
@@ -310,6 +321,8 @@
 
       @media screen and (max-width:50rem) {
         margin-left: 0 !important;
+
+        
       }
 
       h4{

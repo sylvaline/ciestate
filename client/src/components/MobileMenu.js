@@ -3,14 +3,21 @@ import { NavLink, Link } from "react-router-dom";
 import Slide from "react-reveal/Slide";
 import Login from './Login'
 import {useSelector} from 'react-redux'
+import Hambuger from './Hambuger'
 
-function MobileMenu({  contact }) {
+function MobileMenu() {
   const [isMenu, setMenu] = useState(false);
 const [is_modal, setModal] = useState(false)
 const auth = useSelector((state)=>state.auth)
 
 
   const closeMenu = () => setMenu(false);
+
+  const [toggle, setToggle] = useState(false);
+
+  const [what, setWhat] = useState(false);
+
+
 
   return (
     <>
@@ -19,7 +26,7 @@ const auth = useSelector((state)=>state.auth)
         <div className="logo">
           <Link to="/">
             {/* <img src="\image\spacelogo.png" alt="" /> */}
-            CIS
+            CIP
           </Link>
         </div>
         <div
@@ -27,12 +34,7 @@ const auth = useSelector((state)=>state.auth)
           className={isMenu ? "menu-toggle open" : "menu-toggle"}
         >
           <div className="hamburger">
-            <span></span>
-            <span></span>
-          </div>
-          <div className="cross">
-            <span></span>
-            <span></span>
+            <Hambuger toggle={toggle} setToggle={setToggle} setWhat={setWhat} />
           </div>
         </div>
       </div>
@@ -49,11 +51,13 @@ const auth = useSelector((state)=>state.auth)
                  <Link to="/about-us">About us</Link>
                </li>
                
-               <li>Our services</li>
+               <li>
+                 <Link to="/services">Our services</Link>
+               </li>
       
                <li
               onClick={() => {
-                contact();
+                
                 setMenu(false);
               }}
             >

@@ -4,6 +4,7 @@ import { delete_project, get_projects } from "../../store/actions/projectActions
 import parser from "html-react-parser";
 import { Link } from "react-router-dom";
 import ModalCancel from "./ModalCancel";
+import DashboardLayout from "./DashboardLayout";
 
 
 const ProjectList = (props)=> {
@@ -39,7 +40,8 @@ const ProjectList = (props)=> {
 
   return (
    
-      <div className="projectList">
+     <DashboardLayout>
+        <div className="projectList">
         {project_loading ? (
           <h3>project loading</h3>
         ) : (
@@ -61,19 +63,19 @@ const ProjectList = (props)=> {
                 {projects.slice(0, visible).map((project) => {
                   return (
                     <>
-                      <tr key={project._id}>
+                      <tr key={project?._id}>
                         <td className="th_large">
                           <Link
                             to={{
-                              pathname: `admin-project-details/${project?.category && project?.category?.name}/${project.slug}`,
+                              pathname: `project-details/${project?._id}`,
                               state: { project: project },
                             }}
                           >
-                            {project.title ? project.title.slice(0, 50) : ''}
+                            {project?.title ? project?.title.slice(0, 50) : ''}
                           </Link>
                         </td>
                         <td className="th_large">
-                          {project.content ? parser(project.content.slice(0, 80)) : ''}
+                          {project?.content ? parser(project.content.slice(0, 80)) : ''}
                         </td>
                         <td>
                           <img
@@ -85,12 +87,12 @@ const ProjectList = (props)=> {
                           />
                         </td>
 
-                        <td>{project.category && project.category.name}</td>
+                        <td>{project?.category && project?.category?.name}</td>
                         
                         <td
                           onClick={() => {
                             setModulOpen(true);
-                            setGettingId(project._id);
+                            setGettingId(project?._id);
                           }}
                         >
                           Delete
@@ -128,6 +130,7 @@ const ProjectList = (props)=> {
           </>
         )}
       </div>
+     </DashboardLayout>
     
   );
 }

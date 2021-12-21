@@ -3,6 +3,7 @@ import Button from "./elements/Button";
 import SignUp from "./SignUp";
 import { useDispatch, useSelector } from "react-redux";
 import { signin } from "../store/actions/authAction";
+import {clear_error_msg} from "../store/actions/errorAction"
 
 function Login({ setModal}) {
   
@@ -17,6 +18,7 @@ function Login({ setModal}) {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
   const err = useSelector((state) => state.error);
+
   // let errMsg = "";
 
   // const fix = ()=>{
@@ -25,7 +27,9 @@ function Login({ setModal}) {
   // }
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
+    
 
     if (!email || !password) {
       setErrMsg("Please fill all the inputs");
@@ -40,22 +44,29 @@ function Login({ setModal}) {
 
     // fix()
     console.log(sign_in);
+    
   };
 
-  // errMsg = auth.msg || err.msg
   useEffect(()=>{
-      if(auth.msg || err.msg){
-        setErrMsg(auth.msg || err.msg);
+    
+      if(err.msg){
+        setErrMsg(err.msg);
       } 
      
-  }, [auth.msg, err.msg])
+  }, [err.msg])
+
+  console.log(errMsg)
+
   if (auth.is_authenticated) {
     
     setTimeout(() => {
         setErrMsg("");
       setModal(false);
+      
     }, 1000);
   }
+
+  
 
   return (
     <>
@@ -69,6 +80,9 @@ function Login({ setModal}) {
                     {errMsg ? errMsg : ""}
                   </p>
                 )}
+                {
+                  auth.is_loading ? <h2 className="loading_login"><div class="lds-ripple"><div></div><div></div></div></h2> : ''
+                }
                 <h3>Login</h3>
                 <p>Login is required to continue</p>
               </div>

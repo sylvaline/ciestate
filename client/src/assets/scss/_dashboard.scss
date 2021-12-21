@@ -1,12 +1,18 @@
 .dashboard{
     width: 100%;
- 
+    max-height: 100%;
+   overflow-x: scroll;
+    
     background-color: rgba(128, 128, 128, 0.459);
+    //   background-color: rgba(206, 10, 10, 0.459);
     display: flex;
+
+    
 
     .sidebar{
         width: 10%;
-        height: 130vh;
+        max-height: 100vh;
+        overflow-x: hidden !important;
         background-color: $main_nav_bg;
         text-align: center;
     .intro{
@@ -47,4 +53,9 @@
     }
 
     
+}
+
+.msg_auth{
+    text-align: center;
+    margin-top: 10rem;
 }

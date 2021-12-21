@@ -2,7 +2,7 @@ import {USER_LOADED, AUTH_ERROR, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS, IS_L
 import axios from '../../helper/axios'
 import configs from '../../helper/config'
 
-import {error_msg} from './errorAction'
+import {error_msg, clear_error_msg} from './errorAction'
 
 
 
@@ -99,6 +99,8 @@ export const admin = (data) => dispatch => {
 
 export const signin = data => dispatch => {
 
+    dispatch({type : IS_LOADING})
+
     const config = {
         method : "post",
         url : "/user/login",
@@ -111,25 +113,24 @@ export const signin = data => dispatch => {
     axios(config)
     .then(res =>{
         
-        dispatch({
-            type : LOGIN_SUCCESS,
-            payload : res.data
-        })
-        
-        
-    }
-    )
-    .catch(err => {
-        if(err.response){
-            dispatch(error_msg(err.response.data.msg, err.response.status))
-            console.log(err.response.data.msg)
+        if(res.data){
+            dispatch({
+                type : LOGIN_SUCCESS,
+                payload : res.data
+            })
+            dispatch(error_msg(res.data.msg, res.data.status))
+            console.log(res?.data.msg)
+        } else{
+            dispatch(error_msg(res.response?.data.msg, res.response?.status))
+            console.log(res.response?.data.msg)
             dispatch({
                 type : LOGIN_FAIL
         })
-        } else{
-            dispatch(error_msg("No internet connection"))
         }
-    })
+        
+    }
+    )
+    .catch(err => console.log(err))
 }
 
 export const signout = () =>{

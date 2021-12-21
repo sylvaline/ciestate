@@ -18,7 +18,7 @@ export default function err (state = initialState, action){
 
         case CLEAR_ERROR_MSG:
             return{
-                msg : {},
+                msg : "",
                 status : null,
                 id : null
             } 

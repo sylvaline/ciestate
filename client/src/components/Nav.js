@@ -26,8 +26,11 @@ function Nav() {
                 <Link to="/about-us">
                 <li>About us</li>
                 </Link>
+
+                <Link to="/services">
+                <li>Our services</li>
+                </Link>
                 
-                <li ref={service}>Our services</li>
                 <Link to="/contact"><li>Contact us</li></Link>
 
                 {

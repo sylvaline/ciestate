@@ -6,9 +6,10 @@ function PropertyDetails() {
   useEffect(()=>{
     window.scrollTo({top:0, behavior:"smooth"})
   })
-
+ 
   return (
     <Layout>
+      
       <div className="property_details">
       <div className="property_details_inner">
         <div className="property_image">

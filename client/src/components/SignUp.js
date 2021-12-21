@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Button from './elements/Button'
 import Login from './Login'
 import {useDispatch, useSelector} from 'react-redux'
@@ -10,8 +10,9 @@ function SignUp({setModal}) {
     const [password, setPassword] = useState('')
     const [checkbox, setCheckbox] = useState(false)
     const [openLogin, setOpenLogin] = useState(false)
+    const err = useSelector((state) => state.error);
 
-    const [, setErrMsg] = useState('')
+    const [errMsg, setErrMsg] = useState('')
 
     const dispatch = useDispatch()
     const auth = useSelector((state)=>state.auth)
@@ -33,7 +34,6 @@ function SignUp({setModal}) {
             password,
             email,
             username
-            
         }
 
         dispatch(register(registe))
@@ -43,6 +43,14 @@ function SignUp({setModal}) {
        
         
     }
+
+    useEffect(()=>{
+    
+        if(err.msg){
+          setErrMsg(err.msg);
+        } 
+       
+    }, [err.msg])
 
     if(auth.is_authenticated){
         setModal(false)
@@ -56,6 +64,14 @@ function SignUp({setModal}) {
                 <div className="login_form_div">
 
                     <div className="form_intro">
+                    {errMsg && (
+                  <p className={auth.msg ? "display_msg" : "display_msg_err"}>
+                    {errMsg ? errMsg : ""}
+                  </p>
+                )}
+                    {
+                  auth.is_loading ? <h2 className="loading_login"><div class="lds-ripple"><div></div><div></div></div></h2> : ''
+                }
                     <h3>Sign up</h3>
                     <p>100% free to JOIN</p>
                     </div>

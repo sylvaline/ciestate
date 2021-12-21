@@ -108,7 +108,7 @@ export const single_PROJECT = (id) => (dispatch, getState) =>{
 }
 
 // EDIT PROJECT
-export const edit_PROJECT = (id, data) => (dispatch, getState) => {
+export const edit_project = (id, data) => (dispatch, getState) => {
   const config = configs(getState, "PROJECT", `/project/edit/${id}`, data);
 
   axios(config)

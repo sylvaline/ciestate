@@ -3,7 +3,6 @@ import {Switch, Route} from 'react-router-dom'
 import Home from './components/Home'
 import Properties from './components/Properties'
 import Dashboard from './components/dashboard_items/Dashboard'
-import PropertyDetails from './components/PropertyDetails'
 import Contact from './components/Contact'
 import Favorites from './components/Favorites'
 import About from './components/About'
@@ -14,6 +13,10 @@ import Logout from './components/Logout'
 import BtnToTop from './components/BtnToTop'
 import ProjectList from './components/dashboard_items/ProjectList'
 import Loading from './components/Loading'
+import ProjectEdit from './components/dashboard_items/ProjectEdit'
+import ProjectDetails from './components/dashboard_items/ProjectDetails'
+import Services from './components/Services'
+
 
 function App() {
 
@@ -40,12 +43,16 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/properties" component={Properties} />
         <Route path="/contact" component={Contact} />
-        <Route path="/property-details" component={PropertyDetails} />
+       
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/fav" component={Favorites} />
         <Route path="/logout" component={Logout} />
         <Route path="/about-us" component={About} />
+        <Route path="/services" component={Services} />
         <Route path="/project-list" component={ProjectList} />
+        <Route path="/project-edit/:id" component={ProjectEdit} />
+        <Route path="/project-details/:id" component={ProjectDetails} />
+        {/* <Route path="/property-details/:id" component={PropertyDetails} /> */}
       </Switch>
       {/* <Footer/> */}
       <BtnToTop/>
